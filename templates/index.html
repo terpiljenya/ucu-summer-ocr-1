@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brand detection demo">
+    <meta name="author" content="BVLC (http://bvlc.eecs.berkeley.edu/)">
+
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Script to instantly classify an image once it is uploaded. -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $('#classifyfile').attr('disabled',true);
+          $('#image').change(
+            function(){
+              if ($(this).val()){
+                $('#formupload').submit();
+              }
+            }
+          );
+        }
+      );
+    </script>
+
+    <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height:1.5em;
+      color: #232323;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: Times, serif;
+      line-height:1.5em;
+      border-bottom: 1px solid #ccc;
+    }
+.container{
+padding-top:20px;
+}
+    </style>
+  </head>
+        <title>Text detection demo</title>
+  <body>
+    <!-- Begin page content -->
+    <div class="container container-fluid">
+
+      <div class="page-header">
+        <h1><a href="/">Text Detection Demo</a></h1>
+      </div>
+<!--
+      <div>
+        <h2>Classification</h2>
+        <a href="/classify_url?imageurl=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02351%2Fcross-eyed-cat_2351472k.jpg">Click for a Quick Example</a>
+      </div>
+-->
+      {% if has_result %}
+      <div class="media">
+        <div><a class="pull-left" href="#"><img class="media-object" width="80%" src={{ imagesrc }}></a></div>
+        <div>{{ result['words'] }}</div>
+        <hr/>
+          <div>Timing: {{ result['timing']['overall'] }}</div>
+        <hr/>
+          {% end%}
+
+
+
+      <form role="form" action="detect" method="get">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" name="imageurl" id="imageurl" placeholder="Provide an image URL">
+            <span class="input-group-btn">
+              <input class="btn btn-primary" value="Classify URL" type="submit" id="classifyurl"></input>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+      </form>
+
+      <form id="formupload" class="form-inline" role="form" action="detect" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="image">Or upload an image:</label>
+          <input type="file" name="image" id="image">
+        </div>
+        <!--<input type="submit" class="btn btn-primary" value="Classify File" id="classifyfile"></input>-->
+      </form>
+	  </div>
+
+    </div>
+<!--
+    <hr>
+    <div id="footer">
+      <div class="container">
+
+      </div>
+   </div>-->
+ </body>
+</html>
