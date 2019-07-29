@@ -37,7 +37,7 @@ and put it to `data` folder
 #### CRNN
 * paper - https://arxiv.org/abs/1507.05717
 
-* pytorch (YouScan port) - https://github.com/meijieru/crnn.pytorch
+* pytorch (YouScan port) - https://github.com/YouScan/crnn.pytorch
 * pytorch chinese + generation - https://github.com/Sierkinhane/crnn_chinese_characters_rec
 * tensorflow - https://github.com/MaybeShewill-CV/CRNN_Tensorflow
 * keras - https://github.com/Tony607/keras-image-ocr
