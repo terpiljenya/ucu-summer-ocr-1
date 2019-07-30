@@ -54,5 +54,6 @@ and put it to `data` folder
 #### Other OCR Links
 Papers/repositories/tools about text detection and recognitions:
 
+* https://github.com/hwalsuklee/awesome-deep-text-detection-recognition
 * https://github.com/tangzhenyu/Scene-Text-Understanding
 * https://github.com/jyhengcoder/myOCR
