@@ -16,7 +16,7 @@ and put it to `pretrained_models` folder
 
 Download datasets:
 * [*optional*] Small train - [here](https://drive.google.com/open?id=197fBp48WU1kFXKrXr_UI_7GiCS4CuQD0) [529M]
-* Validation - [here](https://drive.google.com/file/d/1rxwGwfjNhDGpvcBr-k1eumk-_ukm7V7K/v) [118M]
+* Validation - [here](https://drive.google.com/file/d/1rxwGwfjNhDGpvcBr-k1eumk-_ukm7V7K) [118M]
 
 and put it to `data` folder
 
